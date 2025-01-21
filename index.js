@@ -1,9 +1,7 @@
 import express from "express";
 import cors from "cors";
-import "./database.js"
+import "./database.js";
 import { Todo } from "./Models/index.js";
-
-
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -11,28 +9,26 @@ const port = process.env.PORT || 5001;
 // const todos = [];
 
 app.use(express.json()); //to convert body into json
-app.use(cors({origin:["http://localhost:5173"]}));
+app.use(cors({ origin: ["http://localhost:5173"] }));
 
 app.get("/api/v1/todos", (request, response) => {
   const message = !todos.length ? "todos empty" : "data fetched succesfully";
   response.send({ data: todos, message: message });
 });
 // ye api todo add krne k lea he
-app.post("/api/v1/todo", async(request, response) => {
-
+app.post("/api/v1/todo", async (request, response) => {
   const object = {
-    todoContent: request.body.todo,
+    todocontent: request.body.todo,
     // id: String(new Date().getTime()),
     // ip:request.ip
-   
   };
   // todos.push(object);
-  const result = await Todo.create(object)
-  console,log("res",result)
 
+  console.log(object);
+  const result = await Todo.create(object);
+  console.log("res", result);
 
-
-  response.send({ messege: "todo added succesfully", data: object });
+  response.send({ messege: "todo added succesfully", data: result });
 });
 
 // ye api todo update ya edit krne k lea he
@@ -88,7 +84,7 @@ app.delete("/api/v1/todo/:id", (request, response) => {
 
 // ager uper wale routes me se koi route nhi milta t ye route lazmi chale ga
 app.use((request, response) => {
-  response.status(404).send({message:"route not found!"});
+  response.status(404).send({ message: "route not found!" });
 });
 
 // ye port k apna seen he

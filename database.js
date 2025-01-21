@@ -5,7 +5,7 @@ const mungodbUri = "mongodb+srv://salman:qxZSEwn1OzZUqVyv@cluster0.ns73c.mongodb
 const connectDB = async () => {
     try {
       const connectionInstance = await mongoose.connect(mungodbUri, {
-        dbName:" My-todo-db",
+        dbName: "My-todo-db",
       });
   
       console.log(`\n🌿 MongoDB connected ! 🍃\n`);
