@@ -23,12 +23,12 @@ app.post("/api/v1/todo", async(request, response) => {
   const object = {
     todoContent: request.body.todo,
     // id: String(new Date().getTime()),
-    ip:request.ip
+    // ip:request.ip
    
   };
   // todos.push(object);
-  const res = await Todo.create(object)
-  console,log("res",res)
+  const result = await Todo.create(object)
+  console,log("res",result)
 
 
 
