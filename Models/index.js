@@ -4,7 +4,7 @@ import { Schema, model } from "mongoose";
 
 const todoSchema = new Schema(
   {
-    todocontent:
+    todoContent:
     {
       type: String,
       required: true 
