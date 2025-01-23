@@ -1,6 +1,6 @@
 { 
      "version": 2, 
-     "name": "AI Chat-bot", 
+     "name": "Web development", 
      "builds": [ 
         { "src": "index.js", "use": "@vercel/node" } 
      ], 

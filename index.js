@@ -16,7 +16,7 @@ app.get("/api/v1/todos", async (request, response) => {
   try {
     const todos = await Todo.find(
       {},
-      {todoContent: 1 } //projection
+      {todoContent: 1, ip:1 } //projection
       //{ todocontent: 0, ip: 0, _v: 0 } //( 0 wale frontend pr show nhi honge)
       // projection hum is lia use krte hen ksi ko frontend pr show kr he ya nahi karna.
       //{todoContent: 1 , id: 0 } // advance siruf id me difference keys use ho sakti he. 1 wale sirf frontend pr show honge ( 0 or 1 ek heme use nahi hoskte sivae "id" k )
